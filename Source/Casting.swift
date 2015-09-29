@@ -156,3 +156,11 @@ public func NonEmptyStringValue(optionalValue: AnyObject?, trimWhitespace: Bool 
         return nil
     }
 }
+
+public func URLValue(optionalValue: AnyObject?) -> NSURL? {
+    if let string = NonEmptyStringValue(optionalValue) {
+        return NSURL(string: string)
+    } else {
+        return nil
+    }
+}
