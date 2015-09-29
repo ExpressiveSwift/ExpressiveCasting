@@ -29,5 +29,13 @@ class ExpressiveCastingTests: XCTestCase {
         XCTAssertEqual(BoolValue("2"),     nil)
         XCTAssertEqual(BoolValue("x"),     nil)
     }
-    
+
+    func testImplicitConv() {
+        let x: AnyObject? = "1"
+        let y: Int? = x~~~
+        let z = x~~~ ?? 2
+        XCTAssertEqual(y, 1)
+        XCTAssertEqual(z, 1)
+    }
+
 }
