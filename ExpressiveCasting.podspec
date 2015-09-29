@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "ExpressiveCasting"
-  s.version          = "0.1.0"
+  s.version          = "0.5.0"
   s.summary          = "Handles untyped and potentially untrusted incoming data (JSON APIs, User Defaults and such)"
 
   s.description      = <<-DESC
