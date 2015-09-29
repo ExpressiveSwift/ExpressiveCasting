@@ -23,6 +23,13 @@
 //
 import Foundation
 
+public typealias JSONObject = [String: AnyObject]
+public typealias JSONArray = [AnyObject]
+
+public protocol JSONObjectConvertible {
+    init(raw: JSONObject) throws
+}
+
 public func BoolValue(optionalValue: AnyObject?) -> Bool? {
     if let value: AnyObject = optionalValue {
         if let v = value as? Bool {
@@ -122,18 +129,14 @@ public func ArrayValue<T>(optionalValue: AnyObject?, itemMapper: (AnyObject) -> 
     }
 }
 
-//// useless right now, latest betas allow doing this as a simple cast
-//public func DictionaryValue<T>(optionalValue: AnyObject?) -> [String: AnyObject]? {
-//    if let value: AnyObject = optionalValue {
-//        if let dictionary = value as? NSDictionary {
-//            return dictionary as? [String: AnyObject]
-//        } else {
-//            return nil
-//        }
-//    } else {
-//        return nil
-//    }
-//}
+
+public func JSONObjectValue(optionalValue: AnyObject?) -> JSONObject? {
+    return optionalValue as? [String: AnyObject]
+}
+
+public func JSONObjectsArrayValue(optionalValue: AnyObject?) -> [JSONObject]? {
+    return ArrayValue(optionalValue) { JSONObjectValue($0) }
+}
 
 
 public func NonEmptyString(optionalValue: String?, trimWhitespace: Bool = true) -> String? {

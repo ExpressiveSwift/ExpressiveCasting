@@ -85,3 +85,30 @@ postfix public func ~~~ (optional: AnyObject?) -> [String]? {
 public func ~|||~ (optional: AnyObject?, defaultValue: [String]) -> [String] {
     return optional~~~ ?? defaultValue
 }
+
+
+postfix public func ~~~ (optional: AnyObject?) -> JSONObject? {
+    return JSONObjectValue(optional)
+}
+
+public func ~|||~ (optional: AnyObject?, defaultValue: JSONObject) -> [String: AnyObject] {
+    return optional~~~ ?? defaultValue
+}
+
+
+postfix public func ~~~ (optional: AnyObject?) -> [JSONObject]? {
+    return JSONObjectsArrayValue(optional)
+}
+
+public func ~|||~ (optional: AnyObject?, defaultValue: [JSONObject]) -> [JSONObject] {
+    return optional~~~ ?? defaultValue
+}
+
+
+postfix public func ~~~ (optional: AnyObject?) -> NSURL? {
+    return URLValue(optional)
+}
+
+public func ~|||~ (optional: AnyObject?, @autoclosure defaultValue: () -> NSURL) -> NSURL {
+    return optional~~~ ?? defaultValue()
+}
