@@ -30,6 +30,9 @@ public protocol JSONObjectConvertible {
     init(raw: JSONObject) throws
 }
 
+
+// MARK: Simple values
+
 public func BoolValue(optionalValue: AnyObject?) -> Bool? {
     if let value: AnyObject = optionalValue {
         if let v = value as? Bool {
@@ -109,6 +112,42 @@ public func StringValue(optionalValue: AnyObject?) -> String? {
     }
 }
 
+public func NonEmptyString(optionalValue: String?, trimWhitespace: Bool = true) -> String? {
+    if let value = optionalValue {
+        let trimmedValue: String = (trimWhitespace ? value.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) : value);
+        if trimmedValue.isEmpty {
+            return nil
+        } else {
+            return trimmedValue
+        }
+    } else {
+        return nil
+    }
+}
+
+public func NonEmptyStringValue(optionalValue: AnyObject?, trimWhitespace: Bool = true) -> String? {
+    if let value = StringValue(optionalValue) {
+        return NonEmptyString(value, trimWhitespace: trimWhitespace)
+    } else {
+        return nil
+    }
+}
+
+
+// MARK: Foundation values
+
+
+public func URLValue(optionalValue: AnyObject?) -> NSURL? {
+    if let string = NonEmptyStringValue(optionalValue) {
+        return NSURL(string: string)
+    } else {
+        return nil
+    }
+}
+
+
+// MARK: Collection values
+
 public func ArrayValue<T>(optionalValue: AnyObject?, itemMapper: (AnyObject) -> T?) -> [T]? {
     if let value: AnyObject = optionalValue {
         if let array = value as? [AnyObject] {
@@ -129,7 +168,6 @@ public func ArrayValue<T>(optionalValue: AnyObject?, itemMapper: (AnyObject) -> 
     }
 }
 
-
 public func JSONObjectValue(optionalValue: AnyObject?) -> JSONObject? {
     return optionalValue as? [String: AnyObject]
 }
@@ -138,6 +176,8 @@ public func JSONObjectsArrayValue(optionalValue: AnyObject?) -> [JSONObject]? {
     return ArrayValue(optionalValue) { JSONObjectValue($0) }
 }
 
+
+// MARK: JSONObjectConvertible
 
 public func JSONConvertibleObjectValue <T: JSONObjectConvertible> (optional: AnyObject?) -> T? {
     if let raw: JSONObject = JSONObjectValue(optional) {
@@ -162,32 +202,3 @@ public func JSONConvertibleObjectsArrayValue <T: JSONObjectConvertible> (optiona
     }
 }
 
-
-public func NonEmptyString(optionalValue: String?, trimWhitespace: Bool = true) -> String? {
-    if let value = optionalValue {
-        let trimmedValue: String = (trimWhitespace ? value.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) : value);
-        if trimmedValue.isEmpty {
-            return nil
-        } else {
-            return trimmedValue
-        }
-    } else {
-        return nil
-    }
-}
-
-public func NonEmptyStringValue(optionalValue: AnyObject?, trimWhitespace: Bool = true) -> String? {
-    if let value = StringValue(optionalValue) {
-        return NonEmptyString(value, trimWhitespace: trimWhitespace)
-    } else {
-        return nil
-    }
-}
-
-public func URLValue(optionalValue: AnyObject?) -> NSURL? {
-    if let string = NonEmptyStringValue(optionalValue) {
-        return NSURL(string: string)
-    } else {
-        return nil
-    }
-}
