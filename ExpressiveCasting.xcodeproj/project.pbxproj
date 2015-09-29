@@ -24,6 +24,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4306933B1BBB3AB500B2E70A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4306933C1BBB3ABA00B2E70A /* ExpressiveCasting.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ExpressiveCasting.podspec; sourceTree = "<group>"; };
 		43D6A8A91BB29CB200296B03 /* ExpressiveCasting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExpressiveCasting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D6A8B31BB29CB200296B03 /* ExpressiveCastingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpressiveCastingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D6A8C41BB2A33B00296B03 /* Casting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Casting.swift; sourceTree = "<group>"; };
@@ -55,6 +57,8 @@
 		43D6A89F1BB29CB200296B03 = {
 			isa = PBXGroup;
 			children = (
+				4306933B1BBB3AB500B2E70A /* README.md */,
+				4306933C1BBB3ABA00B2E70A /* ExpressiveCasting.podspec */,
 				43D6A8C31BB2A33B00296B03 /* Source */,
 				43D6A8C81BB2A34700296B03 /* Tests */,
 				43D6A8CB1BB2A35000296B03 /* Metadata */,
