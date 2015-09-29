@@ -139,6 +139,30 @@ public func JSONObjectsArrayValue(optionalValue: AnyObject?) -> [JSONObject]? {
 }
 
 
+public func JSONConvertibleObjectValue <T: JSONObjectConvertible> (optional: AnyObject?) -> T? {
+    if let raw: JSONObject = JSONObjectValue(optional) {
+        return try? T(raw: raw)
+    } else {
+        return nil
+    }
+}
+
+public func JSONConvertibleObjectsArrayValue <T: JSONObjectConvertible> (optional: AnyObject?) -> [T]? {
+    if let raw: [JSONObject] = JSONObjectsArrayValue(optional) {
+        var result: [T] = []
+        result.reserveCapacity(raw.underestimateCount())
+        for el in raw {
+            if let output: T = try? T(raw: el) {
+                result.append(output)
+            }
+        }
+        return result
+    } else {
+        return nil
+    }
+}
+
+
 public func NonEmptyString(optionalValue: String?, trimWhitespace: Bool = true) -> String? {
     if let value = optionalValue {
         let trimmedValue: String = (trimWhitespace ? value.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) : value);

@@ -112,3 +112,12 @@ postfix public func ~~~ (optional: AnyObject?) -> NSURL? {
 public func ~|||~ (optional: AnyObject?, @autoclosure defaultValue: () -> NSURL) -> NSURL {
     return optional~~~ ?? defaultValue()
 }
+
+
+postfix public func ~~~ <T: JSONObjectConvertible> (optional: AnyObject?) -> T? {
+    return JSONConvertibleObjectValue(optional)
+}
+
+postfix public func ~~~ <T: JSONObjectConvertible> (optional: AnyObject?) -> [T]? {
+    return JSONConvertibleObjectsArrayValue(optional)
+}
