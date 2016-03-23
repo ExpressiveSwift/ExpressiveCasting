@@ -1,6 +1,6 @@
 # ExpressiveCasting
 
-<img src="https://img.shields.io/badge/Swift-2-brightgreen.svg" alt="Swift 2.0"> <img src="https://img.shields.io/cocoapods/v/ExpressiveCasting.svg" alt=""> <a href="https://github.com/Carthage/Carthage"><img alt="Carthage incompatible" src="https://img.shields.io/badge/Carthage-incompatible-red.svg"></a>
+<img alt="status beta" src="https://img.shields.io/badge/status-beta-yellowgreen.svg"></a> <img src="https://img.shields.io/badge/Swift-2-brightgreen.svg" alt="Swift 2"> <img src="https://img.shields.io/cocoapods/p/ExpressiveCasting.svg" alt=""> <img src="https://img.shields.io/cocoapods/v/ExpressiveCasting.svg" alt=""> <a href="https://github.com/Carthage/Carthage"><img alt="Carthage incompatible" src="https://img.shields.io/badge/Carthage-incompatible-red.svg"></a> <a href="https://swift.org/package-manager/"><img alt="Swift Package Manager incompatible" src="https://img.shields.io/badge/SPL-incompatible-red.svg"></a>
 
 
 Swift nanoframework for writing concise and expressive code when processing untyped and potentially untrusted incoming data (JSON, User Defaults, command-line arguments and such).
@@ -10,10 +10,7 @@ Provides two alternative interfaces:
 1. A set of casting functions (`BoolValue`, `IntValue`, `DoubleValue`, `StringValue`, `NonEmptyStringValue`, `ArrayValue`, `JSONObjectValue`, `JSONObjectsArrayValue`), most taking `AnyObject?` as an argument and returning the given type or `nil`.
 2. A fuzzy cast postfix operator, `~~~`, providing a terse syntax for the abovementioned functions.
 
-
-## Status
-
-A previous version of this code is shipping in LiveReload 3 alphas. The present version will be shipping in an internal product (and in future LiveReload 3 builds) soon.
+**Beta status**: (1) is used in multiple production apps, (2) documentation effort is in progress, (3) may still undergo heavy or incompatible changes.
 
 
 ## Usage
