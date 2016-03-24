@@ -40,7 +40,7 @@ public func BoolValue(optionalValue: AnyObject?) -> Bool? {
         } else if let v = value as? Int {
             return v != 0
         } else if let v = value as? String {
-            let u = v.uppercaseString
+            let u = v.uppercased()
             if (u == "YES" || u == "TRUE" || u == "ON" || u == "Y" || u == "1") {
                 return true
             } else if (u == "NO" || u == "FALSE" || u == "OFF" || u == "N" || u == "0") {
@@ -83,7 +83,7 @@ public func DoubleValue(optionalValue: AnyObject?) -> Double? {
         } else if let v = value as? String {
             let scanner = NSScanner(string: v)
             var num: Double = 0.0
-            if scanner.scanDouble(&num) && scanner.atEnd {
+            if scanner.scanDouble(&num) && scanner.isAtEnd {
                 return num
             } else {
                 return nil
@@ -114,7 +114,7 @@ public func StringValue(optionalValue: AnyObject?) -> String? {
 
 public func NonEmptyString(optionalValue: String?, trimWhitespace: Bool = true) -> String? {
     if let value = optionalValue {
-        let trimmedValue: String = (trimWhitespace ? value.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) : value);
+        let trimmedValue: String = (trimWhitespace ? value.trimmingCharacters(in: NSCharacterSet.whitespaceAndNewline()) : value);
         if trimmedValue.isEmpty {
             return nil
         } else {
@@ -190,7 +190,7 @@ public func JSONConvertibleObjectValue <T: JSONObjectConvertible> (optional: Any
 public func JSONConvertibleObjectsArrayValue <T: JSONObjectConvertible> (optional: AnyObject?) -> [T]? {
     if let raw: [JSONObject] = JSONObjectsArrayValue(optional) {
         var result: [T] = []
-        result.reserveCapacity(raw.underestimateCount())
+        result.reserveCapacity(raw.underestimatedCount)
         for el in raw {
             if let output: T = try? T(raw: el) {
                 result.append(output)
