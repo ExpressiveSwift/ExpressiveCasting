@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		43D6A8B41BB29CB200296B03 /* ExpressiveCasting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D6A8A91BB29CB200296B03 /* ExpressiveCasting.framework */; settings = {ASSET_TAGS = (); }; };
-		43D6A8C61BB2A33B00296B03 /* Casting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D6A8C41BB2A33B00296B03 /* Casting.swift */; settings = {ASSET_TAGS = (); }; };
-		43D6A8C71BB2A33B00296B03 /* CastingOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D6A8C51BB2A33B00296B03 /* CastingOperators.swift */; settings = {ASSET_TAGS = (); }; };
-		43D6A8CA1BB2A34700296B03 /* CastingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D6A8C91BB2A34700296B03 /* CastingTests.swift */; settings = {ASSET_TAGS = (); }; };
+		43D6A8B41BB29CB200296B03 /* ExpressiveCasting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D6A8A91BB29CB200296B03 /* ExpressiveCasting.framework */; };
+		43D6A8C61BB2A33B00296B03 /* Casting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D6A8C41BB2A33B00296B03 /* Casting.swift */; };
+		43D6A8C71BB2A33B00296B03 /* CastingOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D6A8C51BB2A33B00296B03 /* CastingOperators.swift */; };
+		43D6A8CA1BB2A34700296B03 /* CastingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D6A8C91BB2A34700296B03 /* CastingTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +81,8 @@
 				43D6A8C41BB2A33B00296B03 /* Casting.swift */,
 				43D6A8C51BB2A33B00296B03 /* CastingOperators.swift */,
 			);
-			path = Source;
+			name = Source;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		43D6A8C81BB2A34700296B03 /* Tests */ = {
