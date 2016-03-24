@@ -1,7 +1,11 @@
 # ExpressiveCasting
 
-<img alt="status beta" src="https://img.shields.io/badge/status-beta-yellowgreen.svg"></a> <img src="https://img.shields.io/badge/Swift-2-brightgreen.svg" alt="Swift 2"> <img src="https://img.shields.io/cocoapods/p/ExpressiveCasting.svg" alt=""> <img src="https://img.shields.io/cocoapods/v/ExpressiveCasting.svg" alt=""> <a href="https://github.com/Carthage/Carthage"><img alt="Carthage incompatible" src="https://img.shields.io/badge/Carthage-incompatible-red.svg"></a> <a href="https://swift.org/package-manager/"><img alt="Swift Package Manager incompatible" src="https://img.shields.io/badge/SPL-incompatible-red.svg"></a>
-
+<img alt="status beta" src="https://img.shields.io/badge/status-beta-yellowgreen.svg"></a>
+<img alt="Swift 2" src="https://img.shields.io/badge/Swift-2-brightgreen.svg">
+<img alt="" src="https://img.shields.io/cocoapods/p/ExpressiveCasting.svg">
+<img alt="" src="https://img.shields.io/cocoapods/v/ExpressiveCasting.svg">
+<a href="https://github.com/Carthage/Carthage"><img alt="Carthage incompatible" src="https://img.shields.io/badge/Carthage-incompatible-red.svg"></a>
+<a href="https://swift.org/package-manager/"><img alt="Swift Package Manager incompatible" src="https://img.shields.io/badge/SwiftPM-incompatible-red.svg"></a>
 
 Swift nanoframework for writing concise and expressive code when processing untyped and potentially untrusted incoming data (JSON, User Defaults, command-line arguments and such).
 
