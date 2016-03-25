@@ -59,7 +59,7 @@
 			children = (
 				4306933B1BBB3AB500B2E70A /* README.md */,
 				4306933C1BBB3ABA00B2E70A /* ExpressiveCasting.podspec */,
-				43D6A8C31BB2A33B00296B03 /* Source */,
+				43D6A8C31BB2A33B00296B03 /* Sources */,
 				43D6A8C81BB2A34700296B03 /* Tests */,
 				43D6A8CB1BB2A35000296B03 /* Metadata */,
 				43D6A8AA1BB29CB200296B03 /* Products */,
@@ -75,13 +75,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		43D6A8C31BB2A33B00296B03 /* Source */ = {
+		43D6A8C31BB2A33B00296B03 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				43D6A8C41BB2A33B00296B03 /* Casting.swift */,
 				43D6A8C51BB2A33B00296B03 /* CastingOperators.swift */,
 			);
-			name = Source;
 			path = Sources;
 			sourceTree = "<group>";
 		};
