@@ -8,17 +8,19 @@
 <a href="https://github.com/Carthage/Carthage"><img alt="Carthage incompatible" src="https://img.shields.io/badge/Carthage-incompatible-red.svg"></a>
 <a href="https://swift.org/package-manager/"><img alt="Swift Package Manager incompatible" src="https://img.shields.io/badge/SwiftPM-compatible-brightgreen.svg"></a>
 
-Swift nanoframework for writing concise and expressive code when processing untyped and potentially untrusted incoming data (JSON, User Defaults, command-line arguments and such).
-
-Provides two alternative interfaces:
-
-1. A set of casting functions (`BoolValue`, `IntValue`, `DoubleValue`, `StringValue`, `NonEmptyStringValue`, `ArrayValue`, `JSONObjectValue`, `JSONObjectsArrayValue`), most taking `AnyObject?` as an argument and returning the given type or `nil`.
-2. A fuzzy cast postfix operator, `~~~`, providing a terse syntax for the abovementioned functions.
+Swift µ-framework for writing concise and expressive code when processing untyped and potentially untrusted incoming data (JSON, User Defaults, command-line arguments and such).
 
 **Beta status**: (1) is used in multiple production apps, (2) documentation effort is in progress, (3) may still undergo heavy or incompatible changes.
 
 
 ## Usage
+
+Provides two alternative interfaces:
+
+1. A set of casting functions (`BoolValue`, `IntValue`, `DoubleValue`, `StringValue`, `NonEmptyStringValue`, `ArrayValue`, `JSONObjectValue`, `JSONObjectsArrayValue`), most taking `AnyObject?` as an argument and returning the given type or `nil`.
+
+2. A fuzzy cast postfix operator, `~~~`, providing a terse syntax for the abovementioned functions.
+
 
 ### Aliases
 
@@ -26,6 +28,7 @@ The library defines two type aliases to make dealing with JSON data types easier
 
 * `typealias JSONObject = [String: AnyObject]`
 * `typealias JSONArray = [AnyObject]`
+
 
 ### Simple value casts
 
@@ -56,11 +59,13 @@ The library defines two type aliases to make dealing with JSON data types easier
 
 * `NonEmptyString(v: String?, trimWhitespace: Bool = true) -> String?` is like `NonEmptyStringValue`, but for those cases when you already have a String and simply want to trim it and convert empty values to `nil`.
 
+
 ### Foundation value casts
 
 * `URLValue(v: AnyObject?) -> NSURL?`:
 	* for a `nil`, NSNull or unrecognized input, returns `nil`;
 	* for a String input parsable as NSURL, returns the resulting NSURL object.
+
 
 ### Collection value casts
 
@@ -212,11 +217,22 @@ The best way, though, is to assign to a field.
 
 Use CocoaPods:
 
-		pod 'ExpressiveCasts', '~> 0.5`
+		pod 'ExpressiveCasting', '~> 0.5`
 
 or add this repository as a submodule, drag ExpressiveCasts.xcodeproj into your workspace, add it to “Link with libraries” build phase and then configure a “Copy files” build phase to copy it into the Frameworks folder of your target product (be sure to check the “code sign on copy” checkbox if your target uses code signing).
 
 I'd love to add Carthage support some day. Pull requests welcome.
+
+Using the new Swift Package Manager in development snapshots in Swift 3:
+
+    let package = Package(
+        ...
+        dependencies: [
+            ...
+            .Package(url: "https://github.com/ExpressiveSwift/ExpressiveCasting.git", majorVersion: 0, minor: 5)
+        ]
+    )
+
 
 
 ## Contribution policy
