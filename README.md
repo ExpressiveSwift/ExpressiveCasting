@@ -6,9 +6,11 @@
 <img alt="" src="https://img.shields.io/cocoapods/p/ExpressiveCasting.svg">
 <img alt="" src="https://img.shields.io/cocoapods/v/ExpressiveCasting.svg">
 <a href="https://github.com/Carthage/Carthage"><img alt="Carthage incompatible" src="https://img.shields.io/badge/Carthage-incompatible-red.svg"></a>
-<a href="https://swift.org/package-manager/"><img alt="Swift Package Manager incompatible" src="https://img.shields.io/badge/SwiftPM-compatible-brightgreen.svg"></a>
+<a href="https://swift.org/package-manager/"><img alt="Swift Package Manager compatible" src="https://img.shields.io/badge/Swift_PM-compatible-brightgreen.svg"></a>
 
 Swift µ-framework for writing concise and expressive code when processing untyped and potentially untrusted incoming data (JSON, User Defaults, command-line arguments and such).
+
+Part of [ExpressiveSwift](https://github.com/ExpressiveSwift/ExpressiveSwift), a collection of µ-frameworks solving specific problems with straightforward, concise, readable and safe code.
 
 **Beta status**: (1) is used in multiple production apps, (2) documentation effort is in progress, (3) may still undergo heavy or incompatible changes.
 
