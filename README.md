@@ -248,6 +248,15 @@ I welcome support of all Swift and Foundation types.
 I won't unnecessarily avoid merging pull requests that follow the spirit of the library.
 
 
+## For maintainers
+
+Release process:
+
+1. Bump the version number in `.podspec`.
+
+2. `make release`
+
+
 ## License
 
 Copyright © 2014-2015, Andrey Tarantsov. Provided under the MIT license.
