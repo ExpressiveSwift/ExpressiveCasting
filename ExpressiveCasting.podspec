@@ -11,10 +11,10 @@ Pod::Spec.new do |s|
   s.author           = { "Andrey Tarantsov" => "andrey@tarantsov.com" }
   s.homepage         = "https://github.com/andreyvit/ExpressiveCasting.swift"
   s.source           = { :git => "https://github.com/andreyvit/ExpressiveCasting.swift.git",
-                         :tag => "v#{s.version.to_s}" }
+                         :tag => "#{s.version.to_s}" }
 
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.9"
 
-  s.source_files = 'Source/**/*.{h,m,swift}'
+  s.source_files = 'Sources/*.swift'
 end
