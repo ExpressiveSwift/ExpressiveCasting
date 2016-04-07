@@ -14,6 +14,8 @@ Part of [ExpressiveSwift](https://github.com/ExpressiveSwift/ExpressiveSwift), a
 
 **Beta status**: (1) is used in multiple production apps, (2) documentation effort is in progress, (3) may still undergo heavy or incompatible changes.
 
+© 2016, Andrey Tarantsov. Distributed under the [MIT license](LICENSE).
+
 
 ## Usage
 
